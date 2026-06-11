@@ -6,5 +6,6 @@
     "other": "on"
   },
   "editor.suggestOnTriggerCharacters": true,
-  "editor.acceptSuggestionOnEnter": "smart"
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.formatOnSave": true
 }
