@@ -5,7 +5,7 @@
 
 <h3>Edit Listing</h3>
 
-<form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+<form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
 
     <div class="mp-3">
         <label for="title" value="<%=listing.title%>" class="form-label">
@@ -17,6 +17,7 @@
             name="listing[title]"
             value="<%= listing.title %>"
             class="form-control"
+            required
         >
     </div>
 
@@ -31,6 +32,7 @@
             name="listing[description]"
             class="form-control"
             rows="4"
+            required
         ><%= listing.description %></textarea>
     </div>
 
@@ -44,8 +46,9 @@
         <input 
             type="text" placeholder="Enter image URL/Link"
             name="listing[image]"
-            value="<%= listing.image %>"
+            value="<%= listing.image.url %>"
             class="form-control"
+            required
         >
     </div>
 
@@ -64,6 +67,7 @@
             name="listing[price]"
             value="<%= listing.price %>"
             class="form-control"
+            required
         >
     </div>
 
@@ -79,6 +83,7 @@
             name="listing[country]"
             value="<%= listing.country %>"
             class="form-control"
+            required
         >
     </div>
 
@@ -94,6 +99,7 @@
             name="listing[location]"
             value="<%= listing.location %>"
             class="form-control"
+            required
         >
     </div>
 
@@ -105,3 +111,4 @@
 </form> 
 </div>
 </div>
+
