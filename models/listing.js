@@ -18,7 +18,7 @@ const listingSchema = new Schema({
         default:
           "https://images.unsplash.com/photo-1774905171855-3bcc7aafd33e?w=1000&auto=format&fit=crop&q=60",
         set: (v) =>
-          v === ""
+            v === ""
             ? "https://images.unsplash.com/photo-1774905171855-3bcc7aafd33e?w=1000&auto=format&fit=crop&q=60"
             : v,
     },
@@ -31,7 +31,11 @@ const listingSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref : "Review",
         }
-    ]
+    ],
+    owner:{
+        type: Schema.Types.ObjectId,
+        ref:"User",
+    },
 });
 
 listingSchema.post("findOneAndDelete",async(listing)=>{
